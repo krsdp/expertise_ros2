@@ -1,4 +1,4 @@
-# 3dlidar.py
+# servo_controller.py
 import rclpy
 from rclpy.node import Node
 from std_msgs.msg import Float64
@@ -18,9 +18,13 @@ def main(args=None):
     rclpy.init(args=args)
     servo_controller = ServoController()
 
+    # Set the GPIO pin for the servo
+    servo_gpio_pin = 18
+
     # Set the servo position (replace with your desired values)
     servo_position = 90.0
 
+    # Move the servo to the specified position
     servo_controller.move_servo(servo_position)
 
     rclpy.spin_once(servo_controller)

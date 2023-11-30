@@ -20,7 +20,8 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            '3dlidar_node = lidar2dto3d.3dlidar:main',
+            '3dlidar = lidar2dto3d.3dlidar:main',
+            'servocontroller = lidar2dtocd.servocontroller:main',
             'publisher = lidar2dto3d.publisher:main',
             'subscriber = lidar2dto3d.subscriber:main',
         ],
