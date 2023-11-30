@@ -54,12 +54,13 @@ def lidar_callback(scan):
     adjusted_scan = scan
     adjusted_scan.header.frame_id = base_link_frame_id
     adjusted_scan.ranges = adjusted_ranges
-    pub.publish(adjusted_scan)
+    # pub.publish(adjusted_scan)
 
 def servo_control_node():
     rclpy.init_node('servo_control_node', anonymous=True)
     rclpy.Subscriber('servo_angle', Float64, servo_callback)
     rclpy.Subscriber('/scan', LaserScan, lidar_callback)
+    rclpy.Publisher()
     rclpy.spin()
 
 if __name__ == '__main__':

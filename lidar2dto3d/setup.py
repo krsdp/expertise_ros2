@@ -1,6 +1,6 @@
 from setuptools import find_packages, setup
 
-package_name = '2dto3dlidar'
+package_name = 'lidar2dto3d'
 
 setup(
     name=package_name,
@@ -20,7 +20,9 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
-            '3dlidar_node = 2dto3dlidar.3dlidar_node:main'
+            '3dlidar_node = lidar2dto3d.3dlidar:main',
+            'publisher = lidar2dto3d.publisher:main',
+            'subscriber = lidar2dto3d.subscriber:main',
         ],
     },
 )
