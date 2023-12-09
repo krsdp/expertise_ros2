@@ -6,11 +6,7 @@ from rclpy.node import Node
 class AngleSetpointSubscriber(Node):
     def __init__(self, pin):
         super().__init__('anglesetpoint_subscriber')
-        self.subscription = self.create_subscription(
-            Float32,
-            'anglesetpoint',
-            self.listener_callback,
-            10)
+        self.subscription = self.create_subscription(Float32, 'anglesetpoint', self.listener_callback, 10)
         self.subscription  # prevent unused variable warning
 
         # use GPIO pin for the servo control
