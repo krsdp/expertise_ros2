@@ -21,7 +21,7 @@ setup(
     entry_points={
         'console_scripts': [
             '3dlidar = lidar2dto3d.3dlidar:main',
-            'servocontroller = lidar2dtocd.servocontroller:main',
+            'servocontroller = lidar2dto3d.servocontroller:main',
             'publisher = lidar2dto3d.publisher:main',
             'subscriber = lidar2dto3d.subscriber:main',
         ],
